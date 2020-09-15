@@ -14,6 +14,7 @@ addBtn.addEventListener('click', () => {
 
   if (text !== "") {
     addItem(text);
+    input.value = "";
   }
 });
 
@@ -25,6 +26,7 @@ function addItem(text) {
 
     deleteBtn.addEventListener('click', (e) => {
       e.currentTarget.parentNode.remove();
+      console.log("Item deleted");
     });
 
     item.textContent = text.toLowerCase();
