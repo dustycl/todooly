@@ -1,11 +1,11 @@
 const input = document.getElementById("input-text");
 const addBtn = document.getElementById("add-item");
 
-const userList =["laundry", "dishes", "homework", "groceries"];
+const userList = {"User List": ["laundry", "dishes", "homework", "groceries"]};
 
 const list = document.getElementById("list");
-for (let i = 0; i < userList.length; i++) {
-    let text = userList[i];
+for (let i = 0; i < userList["User List"].length; i++) {
+    let text = userList["User List"][i];
     addItem(text);
 }
 
