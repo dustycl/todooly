@@ -19,17 +19,22 @@ addBtn.addEventListener('click', () => {
 });
 
 function addItem(text) {
-    const item = document.createElement("li");
-    item.id = text;
+    const itemRow = document.createElement("tr");
+    const itemCol = document.createElement("td");
+    const deleteCol = document.createElement("td");
+
+    itemRow.id = text;
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
 
     deleteBtn.addEventListener('click', (e) => {
-      e.currentTarget.parentNode.remove();
+      e.currentTarget.parentNode.parentNode.remove();
       console.log("Item deleted");
     });
 
-    item.textContent = text.toLowerCase();
-    item.appendChild(deleteBtn);
-    list.appendChild(item);
+    itemCol.textContent = text.toLowerCase();
+    deleteCol.appendChild(deleteBtn);
+    itemRow.appendChild(itemCol);
+    itemRow.appendChild(deleteCol);
+    list.appendChild(itemRow);
 }
